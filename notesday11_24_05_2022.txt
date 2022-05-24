@@ -519,7 +519,7 @@ select ename,to_char(doj,'MONTH-dd-yyyy') date_of_joining from employee
 
 You will notice that in some TO_CHAR function examples, the format_mask parameter begins with "FM". This means that zeros and blanks are suppressed. This can be seen in the examples below.
 
-TO_CHAR(sysdate, 'FMMonth DD, YYYY')
+SELECT TO_CHAR(sysdate, 'FMMonth DD, YYYY') FROM dual
 Result: 'July 9, 2003'
 
 TO_CHAR(sysdate, 'FMMON DDth, YYYY')
@@ -610,3 +610,25 @@ Create a table where default value for the customer's city is Delhi.
 
 INSERT into employee VALUES('E0001','Akash','12-Jan-2010');
 INSERT into employee VALUES('E0002','Akash',to_date('12-01-2010','dd-mm-yyyy'));
+-----------------------------------------------------------------------------------------------
+Questions
+ID	ENAME	         DOJ	        SALARY	BONUS	DEPT	DESIGNATION	MANAGER	COMPID
+1	James Potter	01-Jun-14	75000	1000	ICP	PM	        NULL   1001
+2	Ethan McCarty	01-Feb-14	90000	1200	ETA	PM	        NULL   NULL
+3	Emily Rayner	01-Jan-14	25000	100	ETA	SE	        2      1002
+4	Jack Abraham	01-Jul-14	30000	NULL	ETA	SSE	        2      NULL
+5	Ayaz Mohammad	01-Apr-14	40000	NULL	ICP	TA	        1      1003
+
+Q Display the ename and doj for records where the  id is 1,3 OR 5.
+Q Display the ename,doj who joined  in the month of Feb.
+Q Display the ename where salary is 75000 with bonus 1000 and compid as 1001.
+Q Display the id and ename for the employees not having computer.
+Q Display the id and ename who dont have managers.
+Q Display the ename where name is having Ray.
+Q Display id m ename and salary but while displaying salary Prefix with $ and put ,.
+  Example $75,000
+          $90,000
+Q display the id,ename where sum of salary and bonus is more than 50000.
+Q display the different designations which we have in the table ( the designations should be unique).
+Q Display the id with alias name as Employee Id and ename with alias name as  Employee Name alongwith the records.
+ 
